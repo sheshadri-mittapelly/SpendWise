@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title=settings.APP_NAME, version=settings.APP_VERSION, debug=settings.DEBUG)
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -20,7 +21,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 
 @app.get("/api/v1/health")
